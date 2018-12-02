@@ -4,5 +4,5 @@ about: Suggest an idea for this project
 
 ---
 
-**Describe**
+## Description
 A clear and concise description of what you want to happen.
