@@ -60,4 +60,5 @@ typings/
 # next.js build output
 .next
 
+# Client folder with compiled bundel.js and bundle.css
 client/dist
