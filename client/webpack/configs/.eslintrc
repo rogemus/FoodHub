@@ -19,7 +19,9 @@
 		}
 	},
 	"rules": {
-		"semi": 2
+		"semi": 2,
+		"react/require-default-props": 2,
+		"no-console": 1
 	},
 	"extends": ["eslint:recommended", "plugin:react/recommended"]
 }

@@ -1,5 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './view/app';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './view/app';
+import reducer from './reducers';
+
+const store = createStore(reducer, applyMiddleware(thunk));
+
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
