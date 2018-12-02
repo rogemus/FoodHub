@@ -3,6 +3,8 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import './../styles/main.pcss';
+
 import Navigation from './shared/navigation/navigation';
 
 // Pages
@@ -24,10 +26,12 @@ export default class app extends Component {
 				<HashRouter>
 					<React.Fragment>
 						<Navigation />
-						<Switch>
-							<Route exact path="/" component={HomePage} />
-							<Route path="/recipes" component={RecipesPage} />
-						</Switch>
+						<div className="wrapper">
+							<Switch>
+								<Route exact path="/" component={HomePage} />
+								<Route path="/recipes" component={RecipesPage} />
+							</Switch>
+						</div>
 					</React.Fragment>
 				</HashRouter>
 			</Provider>
