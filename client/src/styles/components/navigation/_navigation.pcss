@@ -8,6 +8,17 @@
 	}
 
 	.main-nav-list-item-link {
+		font-size: $font-slight;
 		padding: 15px 30px;
+		font-weight: 700;
+		display: block;
+
+		&.active {
+			border-bottom: 2px solid $yellow;
+
+			&::first-letter {
+				color: $yellow;
+			}
+		}
 	}
 }
