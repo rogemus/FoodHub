@@ -66,3 +66,6 @@ client/dist
 # Python
 .pyc
 __pycache__/
+
+# db
+.sqlite3
