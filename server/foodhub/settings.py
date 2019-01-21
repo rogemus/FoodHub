@@ -27,10 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Application definition
 
-INSTALLED_APPS = [
+BASE_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+PROJECT_APPS = [
+    'accounts.apps.AccountsConfig',
+]
+
+EXTENSION_APPS = [
+]
+
+INSTALLED_APPS = BASE_APPS + PROJECT_APPS + EXTENSION_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
