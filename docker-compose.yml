@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: 'foodhub-postgres'
+    labels:
+      application: 'foodhub-postgres'
+    volumes:
+      - db-data:/var/lib/postgresql
+    expose:
+      - '5432'
+  web:
+    build: ./server
+    container_name: 'foodhub-django'
+    labels:
+      application: 'foodhub-django'
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./server/:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  db-data:

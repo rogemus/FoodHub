@@ -62,3 +62,10 @@ typings/
 
 # Client folder with compiled bundel.js and bundle.css
 client/dist
+
+# Python
+.pyc
+__pycache__/
+
+# db
+*.sqlite3
