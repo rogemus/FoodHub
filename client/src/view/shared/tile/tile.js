@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Card, Image } from 'semantic-ui-react';
 
 export default class Tile extends Component {
 	static propTypes = {
@@ -17,16 +18,19 @@ export default class Tile extends Component {
 
 	render() {
 		return (
-			<div className="tile">
-				<div className="tile-img">
-					<img src={`${this.props.img}?${this.props.name}`} alt={this.props.title} />
-				</div>
-				<div className="tile-title">
-					<Link to={this.props.name}>
-						<h2>{this.props.title}</h2>
-					</Link>
-				</div>
-			</div>
+			<Card>
+				<Image src={`${this.props.img}?${this.props.name}`} alt={this.props.title} />
+				<Card.Content>
+					<Card.Header>
+						<Link to={this.props.name}>
+							{this.props.name}
+						</Link>
+					</Card.Header>
+					<Card.Meta>
+						<span className="date">Joined in 2015</span>
+					</Card.Meta>
+				</Card.Content>
+			</Card>
 		);
 	}
 }

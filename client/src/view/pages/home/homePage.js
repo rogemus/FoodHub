@@ -31,10 +31,6 @@ const list = [
 	{
 		title: 'Recipe 8',
 		name: 'recipe-8'
-	},
-	{
-		title: 'Recipe 9',
-		name: 'recipe-9'
 	}
 ];
 
@@ -49,8 +45,7 @@ export default class HomePage extends Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Home Page</h1>
+			<div className="page-wrapper">
 				<div className="tiles">{this.renderTiles()}</div>
 			</div>
 		);

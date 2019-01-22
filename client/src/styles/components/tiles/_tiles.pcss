@@ -1,8 +1,11 @@
 .tiles {
 	display: grid;
-	grid-gap: 25px 25px;
+	grid-gap: 45px 25px;
 
-	.tile {
+	.card {
+		width: 100%;
+		margin: 0;
+
 		&:nth-child(1),
 		&:nth-child(6) {
 			grid-column: 1 / span 3;
@@ -23,10 +26,6 @@
 
 		&:nth-child(5) {
 			grid-column: 5 / span 2;
-		}
-
-		&:nth-child(8) {
-			grid-column: 1 / span 6;
 		}
 	}
 }
