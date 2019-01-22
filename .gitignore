@@ -62,3 +62,6 @@ typings/
 
 # Client folder with compiled bundel.js and bundle.css
 client/dist
+
+# VS code
+.vscode
