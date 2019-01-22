@@ -69,3 +69,6 @@ __pycache__/
 
 # db
 *.sqlite3
+
+# VS code
+.vscode
