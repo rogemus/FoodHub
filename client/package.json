@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "npm run server",
-		"server": "webpack-dev-server  --config ./webpack/webpack.main.js --mode development --open",
+		"server": "webpack-dev-server  --config ./webpack/webpack.main.js --hot --mode development --open",
 		"watch": "webpack -d --watch --config ./webpack/webpack.main.js --display-error-details",
 		"build": "webpack --config ./webpack/webpack.main.js --mode production"
 	},
@@ -16,7 +16,8 @@
 		"react-router": "^4.3.1",
 		"react-router-dom": "^4.3.1",
 		"redux": "^4.0.1",
-		"redux-thunk": "^2.3.0"
+		"redux-thunk": "^2.3.0",
+		"semantic-ui-react": "^0.84.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
@@ -35,6 +36,9 @@
 		"mini-css-extract-plugin": "^0.4.5",
 		"postcss-import": "^12.0.1",
 		"postcss-loader": "^3.0.0",
+		"postcss-mixins": "^6.2.0",
+		"postcss-normalize": "^7.0.1",
+		"postcss-pxtorem": "^4.0.1",
 		"postcss-nested": "^4.1.1",
 		"postcss-preset-env": "^6.5.0",
 		"postcss-simple-vars": "^5.0.1",
