@@ -42,6 +42,7 @@ BASE_APPS = [
 
 PROJECT_APPS = [
     'accounts.apps.AccountsConfig',
+    'recipes.apps.RecipesConfig',
 ]
 
 EXTENSION_APPS = [
