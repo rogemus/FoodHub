@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class Navigation extends Component {
+	static propTypes = {
+		authenticated: PropTypes.bool.isRequired
+	};
+
+	static defaultTypes = {
+		authenticated: false
+	};
+
 	render() {
 		return (
 			<nav className="main-nav">
@@ -21,6 +30,24 @@ export default class Navigation extends Component {
 							Recipes
 						</NavLink>
 					</li>
+					<li className="main-nav-list-item">
+						<NavLink exact className="main-nav-list-item-link" to="/login">
+							Login
+						</NavLink>
+					</li>
+					<li className="main-nav-list-item">
+						<NavLink exact className="main-nav-list-item-link" to="/register">
+							Register
+						</NavLink>
+					</li>
+
+					{this.props.authenticated ? (
+						<li className="main-nav-list-item">
+							<NavLink exact className="main-nav-list-item-link" to="/register">
+								Register
+							</NavLink>
+						</li>
+					) : null}
 				</ul>
 			</nav>
 		);

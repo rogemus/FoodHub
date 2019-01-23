@@ -20,5 +20,10 @@ module.exports = {
 		path: path.resolve(__dirname, '../dist'),
 		filename: 'bundle.js'
 	},
+	resolve: {
+		alias: {
+			actionTypes: path.resolve(__dirname, '../src/actions/actionTypes.js')
+		},
+	},
 	plugins: [htmlPlugin, cssPlugin, stylelintPlugin]
 };

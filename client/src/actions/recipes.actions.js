@@ -1,4 +1,4 @@
-import { GET_RECIPES } from './types';
+import { GET_RECIPES } from 'actionTypes';
 const list = [
 	{
 		title: 'Recipe 1',

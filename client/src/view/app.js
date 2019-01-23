@@ -9,6 +9,9 @@ import Navigation from './shared/navigation/navigation';
 // Pages
 import HomePage from './pages/home/homePage';
 import RecipesPage from './pages/recipes/recipesPage';
+import LoginPage from './pages/login/loginPage';
+import RegisterPage from './pages/register/registerPage';
+import LogoutPage from './pages/logout/logoutPage';
 
 export default class app extends Component {
 	static propTypes = {
@@ -29,6 +32,9 @@ export default class app extends Component {
 							<Switch>
 								<Route exact path="/" component={HomePage} />
 								<Route path="/recipes" component={RecipesPage} />
+								<Route path="/login" component={LoginPage} />
+								<Route path="/logout" component={LogoutPage} />
+								<Route path="/register" component={RegisterPage} />
 							</Switch>
 						</div>
 					</React.Fragment>
