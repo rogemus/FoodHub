@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-	ERRORS,
+	ERROR,
 	SET_CURRENT_USER,
 	AUTHENTICATE,
 	SIGN_IN
@@ -10,7 +10,9 @@ const API_URL = '/';
 
 const instance = axios.create({
 	headers: {
-		accept: 'application/json'
+		accept: 'application/json',
+		xsrfCookieName: 'XSRF-TOKEN',
+		xsrfHeaderName: 'X-XSRF-TOKEN',
 	}
 });
 
@@ -39,11 +41,11 @@ export function get(path, config, actionType, success, fail) {
 			.catch((error) => {
 				dispatch({
 					payload: error,
-					type: ERRORS
+					type: ERROR
 				});
 
 				if (fail) {
-					fail();
+					fail(error.response.data);
 				}
 			});
 	};
@@ -70,11 +72,11 @@ export function post(path, config, actionType, success, fail) {
 			.catch((error) => {
 				dispatch({
 					payload: error.response.data,
-					type: ERRORS
+					type: ERROR
 				});
 
 				if (fail) {
-					fail();
+					fail(error.response.data);
 				}
 			});
 	};
@@ -112,17 +114,17 @@ export function login(path, config, success, fail) {
 				});
 
 				if (success) {
-					success();
+					success(response.data);
 				}
 			})
 			.catch((error) => {
 				dispatch({
 					payload: error.response.data,
-					type: ERRORS
+					type: ERROR
 				});
 
 				if (fail) {
-					fail();
+					fail(error.response.data);
 				}
 			});
 	};

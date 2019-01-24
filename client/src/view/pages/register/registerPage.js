@@ -5,42 +5,42 @@ import { withRouter } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 
 import { register } from 'actions/authentication.actions';
+import { show } from 'actions/notification.actions';
 
 class RegisterPage extends Component {
-	constructor(props) {
-		super(props);
-
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSuccessLogin = this.handleSuccessLogin.bind(this);
-		this.handleFailLogin = this.handleFailLogin.bind(this);
-	}
-
 	static propTypes = {
-		signIn: PropTypes.func.isRequired,
-		history: PropTypes.object.isRequired
+		register: PropTypes.func.isRequired,
+		history: PropTypes.object.isRequired,
+		show: PropTypes.func.isRequired,
 	}
 
 	state = {
 		password: '',
 		username: '',
+		email: '',
 		error: false
 	}
 
-	handleChange(e, { name, value }) {
+	handleChange = (e, { name, value }) => {
 		this.setState({ [name]: value });
 	}
 
-
-	handleSubmit() {
-		this.props.signIn(this.state, this.handleSuccessLogin, this.handleFailLogin);
+	handleSubmit = () => {
+		this.props.register(this.state, this.handleSuccessLogin, this.handleFailLogin);
 	}
 
-	handleSuccessLogin() {
+	handleSuccessLogin = () => {
 		this.props.history.push('/login');
+
+		this.props.show({
+			header: 'Register successful',
+			content: 'You can login to your new account',
+			icon: 'smile outline',
+			color: 'green'
+		});
 	}
 
-	handleFailLogin() {
+	handleFailLogin = () => {
 		this.setState({
 			error: true
 		});
@@ -50,11 +50,17 @@ class RegisterPage extends Component {
 		return (
 			<div className='page-container'>
 				<h1>Login</h1>
-				<Form onSubmit={this.handleSubmit}>
+				<Form name="register" id="register" onSubmit={this.handleSubmit}>
 					<Form.Input
 						placeholder='Username'
 						name='username'
 						value={this.state.username}
+						onChange={this.handleChange}
+					/>
+					<Form.Input
+						placeholder='Email'
+						name='email'
+						value={this.state.email}
 						onChange={this.handleChange}
 					/>
 					<Form.Input
@@ -71,4 +77,4 @@ class RegisterPage extends Component {
 	}
 }
 
-export default withRouter(connect(null, {register})(RegisterPage));
+export default withRouter(connect(null, {register, show})(RegisterPage));

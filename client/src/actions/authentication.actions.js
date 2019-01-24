@@ -21,7 +21,9 @@ export function register(data) {
 		path: 'accounts/register/',
 		type: REGISTER,
 		conf: {
-			data: data
+			username: data.username,
+			password: data.password,
+			email: data.email
 		}
 	};
 

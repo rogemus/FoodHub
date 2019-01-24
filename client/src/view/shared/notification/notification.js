@@ -24,6 +24,10 @@ export class Notification extends Component {
 			return null;
 		}
 
+		setTimeout(() => {
+			this.props.hide();
+		}, 5000);
+
 		return (
 			<div className="notification">
 				<Message

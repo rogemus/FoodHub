@@ -6,6 +6,7 @@ import { Button, Form } from 'semantic-ui-react';
 
 import { signIn } from 'actions/authentication.actions';
 import { show } from 'actions/notification.actions';
+import parseErrors from 'helpers/errors.helper';
 
 class LoginPage extends Component {
 	static propTypes = {
@@ -39,9 +40,16 @@ class LoginPage extends Component {
 		});
 	}
 
-	handleFailLogin() {
+	handleFailLogin = (errors) => {
 		this.setState({
 			error: true
+		});
+
+		this.props.show({
+			header: 'Error',
+			icon: 'warning circle',
+			color: 'red',
+			list: parseErrors(errors)
 		});
 	}
 
@@ -49,7 +57,7 @@ class LoginPage extends Component {
 		return (
 			<div className='page-container'>
 				<h1>Login</h1>
-				<Form onSubmit={this.handleSubmit}>
+				<Form name="login" id="login" onSubmit={this.handleSubmit}>
 					<Form.Input
 						placeholder='Username'
 						name='username'
