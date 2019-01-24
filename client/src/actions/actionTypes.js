@@ -6,6 +6,7 @@ export const AUTHENTICATE = 'authenticate';
 
 // User 
 export const GET_USER = 'get_user';
+export const SET_CURRENT_USER = 'set_current_user';
 
 // Recipes
 export const GET_RECIPES = 'get_recipes';

@@ -2,8 +2,8 @@ import axios from 'axios';
 import {
 	ERRORS,
 	SET_CURRENT_USER,
-	SET_TOKEN,
-	LOGIN
+	AUTHENTICATE,
+	SIGN_IN
 } from 'actionTypes';
 
 const API_URL = '/';
@@ -89,7 +89,6 @@ export function login(path, config, success, fail) {
 	return (dispatch) => {
 		return instance(Object.assign(requestConfig, config))
 			.then((response) => {
-				const isUserLogin = true;
 				const token = response.data.token;
 				const user = {
 					email: response.data.email,
@@ -97,14 +96,15 @@ export function login(path, config, success, fail) {
 				};
 
 				dispatch({
-					type: LOGIN,
-					payload: isUserLogin
+					type: SIGN_IN,
 				});
 
 				dispatch({
-					type: SET_TOKEN,
-					payload: token
+					type: AUTHENTICATE,
+					payload: true
 				});
+
+				setToken(token);
 
 				dispatch({
 					type: SET_CURRENT_USER,

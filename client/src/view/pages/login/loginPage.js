@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 
 import { signIn } from 'actions/authentication.actions';
@@ -11,15 +12,19 @@ class LoginPage extends Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.handleSuccessLogin = this.handleSuccessLogin.bind(this);
+		this.handleFailLogin = this.handleFailLogin.bind(this);
 	}
 
 	static propTypes = {
 		signIn: PropTypes.func.isRequired,
+		history: PropTypes.object.isRequired
 	}
 
 	state = {
 		password: '',
-		username: ''
+		username: '',
+		error: false
 	}
 
 	handleChange(e, { name, value }) {
@@ -28,7 +33,17 @@ class LoginPage extends Component {
 
 
 	handleSubmit() {
-		this.props.signIn(this.state);
+		this.props.signIn(this.state, this.handleSuccessLogin, this.handleFailLogin);
+	}
+
+	handleSuccessLogin() {
+		this.props.history.push('/');
+	}
+
+	handleFailLogin() {
+		this.setState({
+			error: true
+		});
 	}
 
 	render() {
@@ -56,4 +71,4 @@ class LoginPage extends Component {
 	}
 }
 
-export default connect(null, {signIn})(LoginPage);
+export default withRouter(connect(null, {signIn})(LoginPage));

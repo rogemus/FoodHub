@@ -1,7 +1,7 @@
 import { login, post } from './axios.actions';
 import { REGISTER } from 'actionTypes';
 
-export function signIn(credential) {
+export function signIn(credential, onSuccess, onFail) {
 	const config = {
 		path: 'accounts/login/',
 		conf: {
@@ -13,7 +13,7 @@ export function signIn(credential) {
 		}
 	};
 
-	return login(config.path, config.conf);
+	return login(config.path, config.conf, onSuccess, onFail);
 }
 
 export function register(data) {

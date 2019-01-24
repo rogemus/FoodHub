@@ -13,7 +13,7 @@ import LoginPage from './pages/login/loginPage';
 import RegisterPage from './pages/register/registerPage';
 import LogoutPage from './pages/logout/logoutPage';
 
-export default class app extends Component {
+export default class App extends Component {
 	static propTypes = {
 		store: PropTypes.object.isRequired
 	};
