@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default class Navigation extends Component {
+export class Navigation extends Component {
+	static propTypes = {
+		authenticated: PropTypes.bool.isRequired
+	};
+
+	static defaultTypes = {
+		authenticated: false
+	};
+
 	render() {
 		return (
 			<nav className="main-nav">
@@ -21,8 +32,49 @@ export default class Navigation extends Component {
 							Recipes
 						</NavLink>
 					</li>
+
+					{!this.props.authenticated ? (
+						<>
+							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/login">
+									Login
+								</NavLink>
+							</li>
+							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/register">
+									Register
+								</NavLink>
+							</li>
+						</>
+					) : null}
+
+					{this.props.authenticated ? (
+						<>
+							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/me">
+									Profile
+								</NavLink>
+							</li>
+							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/logout">
+									Logout
+								</NavLink>
+							</li>
+						</>
+					) : null}
 				</ul>
 			</nav>
 		);
 	}
 }
+
+const mapStateToProp = (state) => ({
+	authenticated: state.currentUser.authenticated
+});
+
+export default withRouter(
+	connect(
+		mapStateToProp,
+		null
+	)(Navigation)
+);
