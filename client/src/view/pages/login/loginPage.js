@@ -56,23 +56,25 @@ class LoginPage extends Component {
 	render() {
 		return (
 			<div className='page-wrapper'>
-				<h2>Login</h2>
-				<Form name="login" id="login" onSubmit={this.handleSubmit}>
-					<Form.Input
-						placeholder='Username'
-						name='username'
-						value={this.state.username}
-						onChange={this.handleChange}
-					/>
-					<Form.Input
-						type='password'
-						placeholder='Password'
-						name='password'
-						value={this.state.password}
-						onChange={this.handleChange}
-					/>
-					<Button type='submit'>Submit</Button>
-				</Form>
+				<div className='form-wrapper'>
+					<h2>Login</h2>
+					<Form name="login" id="login" onSubmit={this.handleSubmit}>
+						<Form.Input
+							placeholder='Username'
+							name='username'
+							value={this.state.username}
+							onChange={this.handleChange}
+						/>
+						<Form.Input
+							type='password'
+							placeholder='Password'
+							name='password'
+							value={this.state.password}
+							onChange={this.handleChange}
+						/>
+						<Button secondary type='submit'>Submit</Button>
+					</Form>
+				</div>
 			</div>
 		);
 	}
