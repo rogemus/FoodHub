@@ -48,11 +48,18 @@ export class Navigation extends Component {
 					) : null}
 
 					{this.props.authenticated ? (
-						<li className="main-nav-list-item">
-							<NavLink exact className="main-nav-list-item-link" to="/logout">
-								Logout
-							</NavLink>
-						</li>
+						<>
+							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/me">
+									Profile
+								</NavLink>
+							</li>
+							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/logout">
+									Logout
+								</NavLink>
+							</li>
+						</>
 					) : null}
 				</ul>
 			</nav>
@@ -61,7 +68,7 @@ export class Navigation extends Component {
 }
 
 const mapStateToProp = (state) => ({
-	authenticated: state.user.authenticated
+	authenticated: state.currentUser.authenticated
 });
 
 export default connect(mapStateToProp, null)(Navigation);

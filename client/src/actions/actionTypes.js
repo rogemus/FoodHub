@@ -6,6 +6,7 @@ export const SIGN_OUT = 'sign_out';
 // User 
 export const GET_USER = 'get_user';
 export const SET_CURRENT_USER = 'set_current_user';
+export const GET_CURRENT_USER_DETAILS = 'get_current_user_details';
 export const AUTHENTICATE = 'authenticate';
 
 // Recipes

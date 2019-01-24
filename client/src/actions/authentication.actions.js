@@ -1,4 +1,4 @@
-import { login, post, setToken} from './axios.actions';
+import { login, post, setToken } from './axios.actions';
 import { REGISTER, SET_CURRENT_USER, SIGN_OUT, AUTHENTICATE } from 'actionTypes';
 
 export function signIn(credential, onSuccess, onFail) {
@@ -7,8 +7,7 @@ export function signIn(credential, onSuccess, onFail) {
 		conf: {
 			data: {
 				username: credential.username,
-				password: credential.password,
-				is_staff: false
+				password: credential.password
 			}
 		}
 	};

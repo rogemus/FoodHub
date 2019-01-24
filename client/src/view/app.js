@@ -13,6 +13,7 @@ import RecipesPage from './pages/recipes/recipesPage';
 import LoginPage from './pages/login/loginPage';
 import RegisterPage from './pages/register/registerPage';
 import LogoutPage from './pages/logout/logoutPage';
+import CurrentUser from './pages/currentUser/currentUserPage';
 
 export default class App extends Component {
 	static propTypes = {
@@ -36,6 +37,7 @@ export default class App extends Component {
 								<Route path="/login" component={LoginPage} />
 								<Route path="/logout" component={LogoutPage} />
 								<Route path="/register" component={RegisterPage} />
+								<Route path="/me" component={CurrentUser} />
 							</Switch>
 
 							<Notification/>

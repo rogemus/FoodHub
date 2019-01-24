@@ -10,14 +10,12 @@ const API_URL = '/';
 
 const instance = axios.create({
 	headers: {
-		accept: 'application/json',
-		xsrfCookieName: 'XSRF-TOKEN',
-		xsrfHeaderName: 'X-XSRF-TOKEN',
+		accept: 'application/json'
 	}
 });
 
 export function setToken(token) {
-	instance.defaults.headers.common['Authorization'] = token;
+	instance.defaults.headers.common['Authorization'] = `JWT ${token}`;
 }
 
 export function get(path, config, actionType, success, fail) {
