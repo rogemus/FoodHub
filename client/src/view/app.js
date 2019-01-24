@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './../styles/main.pcss';
-import Navigation from './shared/navigation/navigation';
+import Navigation from 'shared/navigation/navigation';
+import Notification from 'shared/notification/notification';
 
 // Pages
 import HomePage from './pages/home/homePage';
@@ -36,6 +37,8 @@ export default class App extends Component {
 								<Route path="/logout" component={LogoutPage} />
 								<Route path="/register" component={RegisterPage} />
 							</Switch>
+
+							<Notification/>
 						</div>
 					</React.Fragment>
 				</HashRouter>

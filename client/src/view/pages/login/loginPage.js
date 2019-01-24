@@ -5,20 +5,13 @@ import { withRouter } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 
 import { signIn } from 'actions/authentication.actions';
+import { show } from 'actions/notification.actions';
 
 class LoginPage extends Component {
-	constructor(props) {
-		super(props);
-
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSuccessLogin = this.handleSuccessLogin.bind(this);
-		this.handleFailLogin = this.handleFailLogin.bind(this);
-	}
-
 	static propTypes = {
 		signIn: PropTypes.func.isRequired,
-		history: PropTypes.object.isRequired
+		history: PropTypes.object.isRequired,
+		show: PropTypes.func.isRequired,
 	}
 
 	state = {
@@ -27,17 +20,23 @@ class LoginPage extends Component {
 		error: false
 	}
 
-	handleChange(e, { name, value }) {
+	handleChange = (e, { name, value }) => {
 		this.setState({ [name]: value });
 	}
 
 
-	handleSubmit() {
+	handleSubmit = () => {
 		this.props.signIn(this.state, this.handleSuccessLogin, this.handleFailLogin);
 	}
 
-	handleSuccessLogin() {
+	handleSuccessLogin = () => {
 		this.props.history.push('/');
+
+		this.props.show({
+			header: 'Login successful',
+			icon: 'smile outline',
+			color: 'green'
+		});
 	}
 
 	handleFailLogin() {
@@ -71,4 +70,4 @@ class LoginPage extends Component {
 	}
 }
 
-export default withRouter(connect(null, {signIn})(LoginPage));
+export default withRouter(connect(null, {signIn, show})(LoginPage));
