@@ -6,6 +6,6 @@ module.exports = {
 	open: true,
 	proxy: [{
 		context: ['/accounts', '/api'],
-		target: 'http://0.0.0.0:8000/'
+		target: 'http://0.0.0.0:8001/'
 	}]
 };

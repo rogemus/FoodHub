@@ -6,6 +6,8 @@ import { Button, Form } from 'semantic-ui-react';
 
 import { register } from 'actions/authentication.actions';
 import { show } from 'actions/notification.actions';
+import parseErrors from 'helpers/errors.helper';
+
 
 class RegisterPage extends Component {
 	static propTypes = {
@@ -26,10 +28,10 @@ class RegisterPage extends Component {
 	}
 
 	handleSubmit = () => {
-		this.props.register(this.state, this.handleSuccessLogin, this.handleFailLogin);
+		this.props.register(this.state, this.handleSuccessRegister, this.handleFailRegister);
 	}
 
-	handleSuccessLogin = () => {
+	handleSuccessRegister = () => {
 		this.props.history.push('/login');
 
 		this.props.show({
@@ -40,9 +42,16 @@ class RegisterPage extends Component {
 		});
 	}
 
-	handleFailLogin = () => {
+	handleFailRegister = (errors) => {
 		this.setState({
 			error: true
+		});
+
+		this.props.show({
+			header: 'Error',
+			icon: 'warning circle',
+			color: 'red',
+			list: parseErrors(errors)
 		});
 	}
 

@@ -16,18 +16,20 @@ export function signIn(credential, onSuccess, onFail) {
 	return login(config.path, config.conf, onSuccess, onFail);
 }
 
-export function register(data) {
+export function register(data, onSuccess, onFail) {
 	const config = {
 		path: 'accounts/register/',
 		type: REGISTER,
 		conf: {
-			username: data.username,
-			password: data.password,
-			email: data.email
+			data: {
+				username: data.username,
+				password: data.password,
+				email: data.email
+			}
 		}
 	};
 
-	return post(config.path, config.conf, config.type);
+	return post(config.path, config.conf, config.type, onSuccess, onFail);
 }
 
 export function signOut() {
