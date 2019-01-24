@@ -111,6 +111,8 @@ export function login(path, config, success, fail) {
 					payload: user
 				});
 
+				localStorage.setItem('token', JSON.stringify(token));
+
 				if (success) {
 					success(response.data);
 				}

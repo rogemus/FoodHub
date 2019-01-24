@@ -48,5 +48,7 @@ export function signOut() {
 		});
 
 		setToken('');
+
+		localStorage.setItem('token', JSON.stringify(''));
 	};
 }
