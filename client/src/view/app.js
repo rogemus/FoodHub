@@ -33,11 +33,11 @@ export default class App extends Component {
 						<div className="wrapper">
 							<Switch>
 								<Route exact path="/" component={HomePage} />
-								<Route path="/recipes" component={RecipesPage} />
-								<Route path="/login" component={LoginPage} />
-								<Route path="/logout" component={LogoutPage} />
-								<Route path="/register" component={RegisterPage} />
-								<Route path="/me" component={CurrentUser} />
+								<Route exact path="/recipes" component={RecipesPage} />
+								<Route exact path="/login" component={LoginPage} />
+								<Route exact path="/logout" component={LogoutPage} />
+								<Route exact path="/register" component={RegisterPage} />
+								<Route exact path="/me" component={CurrentUser} />
 							</Switch>
 
 							<Notification/>

@@ -33,7 +33,7 @@ class CurrentUser extends Component {
 		}
 
 		return (
-			<div className='page-container'>
+			<div className='page-wrapper'>
 				<h2>Profile</h2>
 
 				<section>

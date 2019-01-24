@@ -14,8 +14,8 @@ class LogoutPage extends Component {
 
 	render() {
 		return (
-			<div className='page-container'>
-				<h1>Logout</h1>
+			<div className='page-wrapper'>
+				<h2>Logout</h2>
 			</div>
 		);
 	}

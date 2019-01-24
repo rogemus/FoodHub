@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -71,4 +72,4 @@ const mapStateToProp = (state) => ({
 	authenticated: state.currentUser.authenticated
 });
 
-export default connect(mapStateToProp, null)(Navigation);
+export default withRouter(connect(mapStateToProp, null)(Navigation));
