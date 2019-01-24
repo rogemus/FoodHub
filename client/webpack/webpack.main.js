@@ -11,6 +11,10 @@ const htmlPlugin = require('./plugins/html.plugin');
 const cssPlugin = require('./plugins/css.plugin');
 const stylelintPlugin = require('./plugins/stylelint.plugin');
 
+// Config
+const aliasConfig = require('./configs/alias.config');
+const devServerConfig = require('./configs/devServer.config');
+
 module.exports = {
 	entry: [path.resolve(__dirname, '../src/index.js')],
 	module: {
@@ -21,9 +25,8 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	resolve: {
-		alias: {
-			actionTypes: path.resolve(__dirname, '../src/actions/actionTypes.js')
-		},
+		alias: aliasConfig
 	},
+	devServer: devServerConfig,
 	plugins: [htmlPlugin, cssPlugin, stylelintPlugin]
 };

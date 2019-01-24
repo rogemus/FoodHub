@@ -21,7 +21,7 @@ export function setToken(token) {
 export function get(path, config, actionType, success, fail) {
 	const requestConfig = {
 		method: 'GET',
-		url: `${API_URL}${path}/`
+		url: `${API_URL}${path}`
 	};
 
 	return (dispatch) => {
@@ -52,7 +52,7 @@ export function get(path, config, actionType, success, fail) {
 export function post(path, config, actionType, success, fail) {
 	const requestConfig = {
 		method: 'POST',
-		url: `${API_URL}${path}/`
+		url: `${API_URL}${path}`
 	};
 
 	return (dispatch) => {
@@ -83,7 +83,7 @@ export function post(path, config, actionType, success, fail) {
 export function login(path, config, success, fail) {
 	const requestConfig = {
 		method: 'POST',
-		url: `${API_URL}${path}/`
+		url: `${API_URL}${path}`
 	};
 
 	return (dispatch) => {

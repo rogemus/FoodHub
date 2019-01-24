@@ -3,16 +3,22 @@ import { REGISTER } from 'actionTypes';
 
 export function signIn(credential) {
 	const config = {
-		path: 'accounts/login',
-		params: credential,
+		path: 'accounts/login/',
+		conf: {
+			data: {
+				username: credential.username,
+				password: credential.password,
+				is_staff: false
+			}
+		}
 	};
 
-	return login(config.path, config.params);
+	return login(config.path, config.conf);
 }
 
 export function register(data) {
 	const config = {
-		path: 'accounts/register',
+		path: 'accounts/register/',
 		type: REGISTER,
 		conf: {
 			data: data
