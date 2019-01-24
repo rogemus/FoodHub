@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { signOut } from 'actions/authentication.actions';
+import PropTypes from 'prop-types';
 
 class LogoutPage extends Component {
+	static propTypes = {
+		signOut: PropTypes.func.isRequired,
+	};
+
+	componentDidMount() {
+		this.props.signOut();
+	}
+
 	render() {
 		return (
 			<div className='page-container'>
@@ -11,4 +21,6 @@ class LogoutPage extends Component {
 	}
 }
 
-export default connect(null, null)(LogoutPage);
+
+
+export default connect(null, {signOut})(LogoutPage);

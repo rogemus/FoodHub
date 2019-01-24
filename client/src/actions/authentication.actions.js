@@ -1,5 +1,5 @@
-import { login, post } from './axios.actions';
-import { REGISTER } from 'actionTypes';
+import { login, post, setToken} from './axios.actions';
+import { REGISTER, SET_CURRENT_USER, SIGN_OUT, AUTHENTICATE } from 'actionTypes';
 
 export function signIn(credential, onSuccess, onFail) {
 	const config = {
@@ -26,4 +26,24 @@ export function register(data) {
 	};
 
 	return post(config.path, config.conf, config.type);
+}
+
+export function signOut() {
+	return (dispatch) => {
+		dispatch({
+			type: SIGN_OUT,
+		});
+
+		dispatch({
+			type: SET_CURRENT_USER,
+			payload: {}
+		});
+
+		dispatch({
+			type: AUTHENTICATE,
+			payload: false
+		});
+
+		setToken('');
+	};
 }
