@@ -23,4 +23,7 @@ class LogoutPage extends Component {
 
 
 
-export default connect(null, {signOut})(LogoutPage);
+export default connect(
+	null,
+	{signOut}
+)(LogoutPage);

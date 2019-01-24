@@ -80,4 +80,9 @@ class LoginPage extends Component {
 	}
 }
 
-export default withRouter(connect(null, {signIn, show})(LoginPage));
+export default withRouter(
+	connect(
+		null,
+		{signIn, show}
+	)(LoginPage)
+);

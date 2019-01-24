@@ -88,4 +88,9 @@ class RegisterPage extends Component {
 	}
 }
 
-export default withRouter(connect(null, {register, show})(RegisterPage));
+export default withRouter(
+	connect(
+		null,
+		{register, show}
+	)(RegisterPage)
+);

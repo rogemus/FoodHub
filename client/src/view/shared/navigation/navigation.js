@@ -72,4 +72,9 @@ const mapStateToProp = (state) => ({
 	authenticated: state.currentUser.authenticated
 });
 
-export default withRouter(connect(mapStateToProp, null)(Navigation));
+export default withRouter(
+	connect(
+		mapStateToProp,
+		null
+	)(Navigation)
+);

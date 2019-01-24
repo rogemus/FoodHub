@@ -44,4 +44,7 @@ const mapStateToProp = (state) => ({
 	visible: state.notification.visible
 });
 
-export default connect(mapStateToProp, {hide})(Notification);
+export default connect(
+	mapStateToProp,
+	{ hide }
+)(Notification);
