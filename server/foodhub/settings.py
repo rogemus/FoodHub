@@ -44,7 +44,7 @@ BASE_APPS = [
 PROJECT_APPS = [
     'accounts.apps.AccountsConfig',
     'recipes.apps.RecipesConfig',
-]
+    'comments.apps.CommentsConfig',]
 
 EXTENSION_APPS = [
     'rest_framework',
