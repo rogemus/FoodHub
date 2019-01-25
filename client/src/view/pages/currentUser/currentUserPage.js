@@ -34,32 +34,34 @@ class CurrentUser extends Component {
 
 		return (
 			<div className='page-wrapper'>
-				<h2>Profile</h2>
+				<div className="form-wrapper">
+					<h2>Profile</h2>
 
-				<section>
-					<header>
-						<h3>Username</h3>
-					</header>
-					<main>
-						{details.username}
-					</main>
-				</section>
-				<section>
-					<header>
-						<h3>Email</h3>
-					</header>
-					<main>
-						{details.email}
-					</main>
-				</section>
-				<section>
-					<header>
-						<h3>Joined</h3>
-					</header>
-					<main>
-						{details.joined}
-					</main>
-				</section>
+					<section>
+						<header>
+							<h3>Username</h3>
+						</header>
+						<main>
+							{details.username}
+						</main>
+					</section>
+					<section>
+						<header>
+							<h3>Email</h3>
+						</header>
+						<main>
+							{details.email}
+						</main>
+					</section>
+					<section>
+						<header>
+							<h3>Joined</h3>
+						</header>
+						<main>
+							{details.joined}
+						</main>
+					</section>
+				</div>
 			</div>
 		);
 	}

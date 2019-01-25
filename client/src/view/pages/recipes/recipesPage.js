@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getRecipes } from '../../../actions/recipes.actions';
+import uuid from 'helpers/uuid.helper';
+import Tile from 'shared/tile/tile';
+
+import { getRecipes } from 'actions/recipes.actions';
 
 export class RecipesPage extends Component {
 	static propTypes = {
@@ -20,15 +23,21 @@ export class RecipesPage extends Component {
 
 	renderList() {
 		if (this.props.recipes.length > 0) {
-			console.log(this.props.recipes);
+			return this.props.recipes.map(item => {
+				const id = uuid();
+	
+				return <Tile {...item} key={id} />;
+			});
 		}
 	}
 
+
 	render() {
 		return (
-			<div>
-				<h1>Recipes Page</h1>
-				{this.renderList()}
+			<div className='page-wrapper'>
+				<div className="recipes">
+					{this.renderList()}
+				</div>
 			</div>
 		);
 	}

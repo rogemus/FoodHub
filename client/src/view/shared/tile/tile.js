@@ -5,29 +5,31 @@ import { Card, Image } from 'semantic-ui-react';
 
 export default class Tile extends Component {
 	static propTypes = {
-		name: PropTypes.string.isRequired,
-		img: PropTypes.string.isRequired,
-		title: PropTypes.string.isRequired
+		id: PropTypes.number.isRequired,
+		image: PropTypes.string.isRequired,
+		title: PropTypes.string.isRequired,
+		author: PropTypes.string.isRequired,
 	};
 
 	static defaultProps = {
-		name: '',
-		img: 'https://loremflickr.com/450/450/salad',
-		title: ''
+		id: '',
+		image: 'https://loremflickr.com/450/450/salad',
+		title: '',
+		author: ''
 	};
 
 	render() {
 		return (
 			<Card>
-				<Image src={`${this.props.img}?${this.props.name}`} alt={this.props.title} />
+				<Image src={this.props.image} alt={this.props.title} />
 				<Card.Content>
 					<Card.Header>
-						<Link to={this.props.name}>
-							{this.props.name}
+						<Link to={`/recipes/${this.props.id}`}>
+							{this.props.title}
 						</Link>
 					</Card.Header>
 					<Card.Meta>
-						<span className="date">Joined in 2015</span>
+						<strong>Created by</strong> {this.props.author}
 					</Card.Meta>
 				</Card.Content>
 			</Card>
