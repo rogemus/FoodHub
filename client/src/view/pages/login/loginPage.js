@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Button, Form } from 'semantic-ui-react';
+import Form from 'semantic-ui-react/dist/es/collections/Form/Form';
+import Button from 'semantic-ui-react/dist/es/elements/Button';
 
 import { signIn } from 'actions/authentication.actions';
 import { show } from 'actions/notification.actions';

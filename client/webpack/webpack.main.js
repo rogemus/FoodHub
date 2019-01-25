@@ -10,6 +10,8 @@ const postCssLoader = require('./loaders/postcss.loader');
 const htmlPlugin = require('./plugins/html.plugin');
 const cssPlugin = require('./plugins/css.plugin');
 const stylelintPlugin = require('./plugins/stylelint.plugin');
+// const bundleAnalyzerPlugin = require('./plugins/bundleAnalyzer.plugin');
+const compressionPlugin = require('./plugins/compression.plugin');
 
 // Config
 const aliasConfig = require('./configs/alias.config');
@@ -17,6 +19,8 @@ const devServerConfig = require('./configs/devServer.config');
 
 module.exports = {
 	entry: [path.resolve(__dirname, '../src/index.js')],
+	mode: 'development',
+	devtool: 'inline-source-map',
 	module: {
 		rules: [jsLoader, eslintLoader, htmlLoader, postCssLoader]
 	},
@@ -28,5 +32,5 @@ module.exports = {
 		alias: aliasConfig
 	},
 	devServer: devServerConfig,
-	plugins: [htmlPlugin, cssPlugin, stylelintPlugin]
+	plugins: [htmlPlugin, cssPlugin, stylelintPlugin, compressionPlugin]
 };

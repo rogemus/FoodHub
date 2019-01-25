@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card, Image } from 'semantic-ui-react';
+import Image from 'semantic-ui-react/dist/es/elements/Image';
+import Card from 'semantic-ui-react/dist/es/views/Card';
 
 export default class Tile extends Component {
 	static propTypes = {

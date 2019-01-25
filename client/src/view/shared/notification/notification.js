@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Message } from 'semantic-ui-react';
 import { hide } from 'actions/notification.actions';
 import PropTypes from 'prop-types';
+
+import Message from 'semantic-ui-react/dist/es/collections/Message';
 
 export class Notification extends Component {
 	static propTypes = {

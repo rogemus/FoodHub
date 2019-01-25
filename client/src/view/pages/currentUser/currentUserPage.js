@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getCurrentUserDetails } from 'actions/currentUser.actions';
 import PropTypes from 'prop-types';
-import _isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'helpers/object.helper';
 
 class CurrentUser extends Component {
 	static propTypes = {
@@ -28,7 +28,7 @@ class CurrentUser extends Component {
 	render() {
 		const { details } = this.props;
 
-		if (_isEmpty(details)) {
+		if (isEmpty(details)) {
 			return 'Loading';
 		}
 

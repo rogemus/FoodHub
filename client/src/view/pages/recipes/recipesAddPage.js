@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Form } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+import Form from 'semantic-ui-react/dist/es/collections/Form/Form';
+import Button from 'semantic-ui-react/dist/es/elements/Button';import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import parseErrors from 'helpers/errors.helper';
 import { postRecipes } from 'actions/recipes.actions';
