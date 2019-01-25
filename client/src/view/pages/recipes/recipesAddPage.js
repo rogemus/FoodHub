@@ -61,16 +61,18 @@ export class RecipesPage extends Component {
 							label='Description'
 							placeholder='Tell us more ...'
 						/>
-						<label htmlFor='image'>
-							Image
-						</label>
-						<input
-							onChange={this.handleFileChange}
-							id='image'
-							name='image'
-							type='file'
-							multiple={false}
-						/>
+						<Form.Field>
+							<label htmlFor='image'>
+								Image
+							</label>
+							<input
+								onChange={this.handleFileChange}
+								id='image'
+								name='image'
+								type='file'
+								multiple={false}
+							/>
+						</Form.Field>
 						<Button
 							secondary
 							type='submit'>
