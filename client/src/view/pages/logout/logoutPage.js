@@ -15,7 +15,11 @@ class LogoutPage extends Component {
 	render() {
 		return (
 			<div className='page-wrapper'>
-				<h2>Logout</h2>
+				<div className='form-wrapper'>
+					<h1>Logout</h1>
+					<h3>It is sad to see you go 😥</h3>
+					<h2>See you soon 🎉</h2>
+				</div>
 			</div>
 		);
 	}

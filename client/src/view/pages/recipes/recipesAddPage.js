@@ -8,7 +8,7 @@ import { postRecipes } from 'actions/recipes.actions';
 import { show } from 'actions/notification.actions';
 
 
-export class RecipesPage extends Component {
+export class RecipeAddPage extends Component {
 	state = {
 		description: '',
 		title: '',
@@ -112,5 +112,5 @@ export default withRouter(
 	connect(
 		null,
 		{ postRecipes, show }
-	)(RecipesPage)
+	)(RecipeAddPage)
 );

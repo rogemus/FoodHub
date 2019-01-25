@@ -57,21 +57,23 @@ export class App extends Component {
 							<Switch>
 								<Route exact path="/" component={HomePage} />
 								<Route exact path="/recipes" component={RecipesPage} />
-								<Route path="/recipes/:id" component={RecipePage} />
+								<Route exact path="/recipes/:id" component={RecipePage} />
+								<Route exact path="/logout" component={LogoutPage} />
+								
+								{this.props.authenticated ? (
+									<Route exact path="/me" component={CurrentUser} />
+								) : null}
 
 								{this.props.authenticated ? (
-									<>
-										<Route exact path="/logout" component={LogoutPage} />
-										<Route exact path="/me" component={CurrentUser} />
-										<Route exact path="/recipes/add" component={RecipesAddPage} />
-									</>
+									<Route exact path="/recipes-add" component={RecipesAddPage} />
 								) : null}
 
 								{!this.props.authenticated ? (
-									<>
-										<Route exact path="/login" component={LoginPage} />
-										<Route exact path="/register" component={RegisterPage} />
-									</>
+									<Route exact path="/register" component={RegisterPage} />
+								) : null}
+
+								{!this.props.authenticated ? (
+									<Route exact path="/login" component={LoginPage} />
 								) : null}
 
 							</Switch>

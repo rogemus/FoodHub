@@ -51,6 +51,11 @@ export class Navigation extends Component {
 					{this.props.authenticated ? (
 						<>
 							<li className="main-nav-list-item">
+								<NavLink exact className="main-nav-list-item-link" to="/recipes-add">
+									Add Recipe
+								</NavLink>
+							</li>
+							<li className="main-nav-list-item">
 								<NavLink exact className="main-nav-list-item-link" to="/me">
 									Profile
 								</NavLink>

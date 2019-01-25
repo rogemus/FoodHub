@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import uuid from 'helpers/uuid.helper';
 import Tile from 'shared/tile/tile';
@@ -36,7 +35,6 @@ export class RecipesPage extends Component {
 	render() {
 		return (
 			<div className='page-wrapper'>
-				<Link to='/recipes/add'>ADD</Link>
 				<div className="recipes">
 					{this.renderList()}
 				</div>

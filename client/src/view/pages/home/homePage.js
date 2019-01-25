@@ -1,53 +1,54 @@
 import React, { Component } from 'react';
-import uuid from '../../../helpers/uuid.helper';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import Tile from '../../shared/tile/tile';
+import uuid from 'helpers/uuid.helper';
+import Tile from 'shared/tile/tile';
 
-const list = [
-	{
-		title: 'Recipe 1',
-		name: 'recipe-1'
-	},
-	{
-		title: 'Recipe 2',
-		name: 'recipe-2'
-	},
-	{
-		title: 'Recipe 3',
-		name: 'recipe-4'
-	},
-	{
-		title: 'Recipe 5',
-		name: 'recipe-5'
-	},
-	{
-		title: 'Recipe 6',
-		name: 'recipe-6'
-	},
-	{
-		title: 'Recipe 7',
-		name: 'recipe-7'
-	},
-	{
-		title: 'Recipe 8',
-		name: 'recipe-8'
+import { getRecipes } from 'actions/recipes.actions';
+
+export class HomePage extends Component {
+	static propTypes = {
+		getRecipes: PropTypes.func.isRequired,
+		recipes: PropTypes.array.isRequired
+	};
+
+	static defaultTypes = {
+		recipes: []
+	};
+
+	componentDidMount() {
+		this.props.getRecipes();
 	}
-];
 
-export default class HomePage extends Component {
-	renderTiles() {
-		return list.map(item => {
-			const id = uuid();
+	renderList() {
+		if (this.props.recipes.length > 0) {
+			const list = this.props.recipes.slice(0, 8);
 
-			return <Tile {...item} key={id} />;
-		});
+			return list.map(item => {
+				const id = uuid();
+	
+				return <Tile {...item} key={id} />;
+			});
+		}
 	}
 
 	render() {
 		return (
 			<div className="page-wrapper">
-				<div className="tiles">{this.renderTiles()}</div>
+				<div className="tiles">{this.renderList()}</div>
 			</div>
 		);
 	}
 }
+
+function mapStateToProps(state) {
+	return {
+		recipes: state.recipes.list
+	};
+}
+
+export default connect(
+	mapStateToProps,
+	{ getRecipes }
+)(HomePage);
