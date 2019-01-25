@@ -14,6 +14,7 @@ export const GET_RECIPES = 'get_recipes';
 
 // Recipe
 export const GET_RECIPE = 'get_recipe';
+export const POST_RECIPE = 'post_recipe';
 
 // Error
 export const ERROR = 'error';

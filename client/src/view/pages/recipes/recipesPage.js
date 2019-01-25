@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import { getRecipes } from '../../../actions/recipes.actions';
 
@@ -26,8 +27,8 @@ export class RecipesPage extends Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Recipes Page</h1>
+			<div className='page-wrapper'>
+				<Link to='/recipes/add'>ADD</Link>
 				{this.renderList()}
 			</div>
 		);

@@ -15,6 +15,7 @@ import HomePage from './pages/home/homePage';
 import RecipesPage from './pages/recipes/recipesPage';
 import LoginPage from './pages/login/loginPage';
 import RegisterPage from './pages/register/registerPage';
+import RecipesAddPage from './pages/recipes/recipesAddPage';
 import LogoutPage from './pages/logout/logoutPage';
 import CurrentUser from './pages/currentUser/currentUserPage';
 
@@ -54,6 +55,7 @@ export default class App extends Component {
 							<Switch>
 								<Route exact path="/" component={HomePage} />
 								<Route exact path="/recipes" component={RecipesPage} />
+								<Route exact path="/recipes/add" component={RecipesAddPage} />
 								<Route exact path="/login" component={LoginPage} />
 								<Route exact path="/logout" component={LogoutPage} />
 								<Route exact path="/register" component={RegisterPage} />

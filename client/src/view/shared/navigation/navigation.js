@@ -19,7 +19,7 @@ export class Navigation extends Component {
 				<ul className="main-nav-list wrapper">
 					<li className="main-nav-list-item logo">
 						<Link className="main-nav-list-item-link" to="/">
-							FoodHub &#127829;
+							FoodHub 🍕
 						</Link>
 					</li>
 					<li className="main-nav-list-item">
