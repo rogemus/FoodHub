@@ -18,6 +18,7 @@ class RecipeSerializer(serializers.ModelSerializer):
             'title',
             'author',
             'description',
+            'image',
         )
         read_only_fields = (
             'id',
