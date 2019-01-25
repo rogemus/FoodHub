@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { getRecipes } from '../../../actions/recipes.actions';
+import uuid from 'helpers/uuid.helper';
+import Tile from 'shared/tile/tile';
+
+import { getRecipes } from 'actions/recipes.actions';
 
 export class RecipesPage extends Component {
 	static propTypes = {
@@ -21,15 +24,22 @@ export class RecipesPage extends Component {
 
 	renderList() {
 		if (this.props.recipes.length > 0) {
-			console.log(this.props.recipes);
+			return this.props.recipes.map(item => {
+				const id = uuid();
+	
+				return <Tile {...item} key={id} />;
+			});
 		}
 	}
+
 
 	render() {
 		return (
 			<div className='page-wrapper'>
 				<Link to='/recipes/add'>ADD</Link>
-				{this.renderList()}
+				<div className="recipes">
+					{this.renderList()}
+				</div>
 			</div>
 		);
 	}

@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-
+import { withRouter } from 'react-router-dom';
+import parseErrors from 'helpers/errors.helper';
 import { postRecipes } from 'actions/recipes.actions';
+import { show } from 'actions/notification.actions';
+
 
 export class RecipesPage extends Component {
 	state = {
@@ -13,7 +16,9 @@ export class RecipesPage extends Component {
 	}
 
 	static propTypes = {
-		postRecipes: PropTypes.func.isRequired
+		postRecipes: PropTypes.func.isRequired,
+		history: PropTypes.object.isRequired,
+		show: PropTypes.func.isRequired,
 	};
 
 
@@ -38,6 +43,24 @@ export class RecipesPage extends Component {
 		data.append('image', this.state.image);
 
 		this.props.postRecipes(data);
+	}
+
+	handleAddSuccess = () => {
+		this.props.history.push('/');
+		this.props.show({
+			header: 'Login successful',
+			icon: 'smile outline',
+			color: 'green'
+		});
+	}
+
+	handleAddFail = (errors) => {
+		this.props.show({
+			header: 'Error',
+			icon: 'warning circle',
+			color: 'red',
+			list: parseErrors(errors)
+		});
 	}
 
 	render() {
@@ -85,12 +108,9 @@ export class RecipesPage extends Component {
 	}
 }
 
-function mapStateToProps() {
-	return {
-	};
-}
-
-export default connect(
-	mapStateToProps,
-	{ postRecipes }
-)(RecipesPage);
+export default withRouter(
+	connect(
+		null,
+		{ postRecipes, show }
+	)(RecipesPage)
+);

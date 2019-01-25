@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { setToken } from 'actions/axios.actions';
@@ -18,10 +18,12 @@ import RegisterPage from './pages/register/registerPage';
 import RecipesAddPage from './pages/recipes/recipesAddPage';
 import LogoutPage from './pages/logout/logoutPage';
 import CurrentUser from './pages/currentUser/currentUserPage';
+import RecipePage from './pages/recipes/recipePage';
 
-export default class App extends Component {
+export class App extends Component {
 	static propTypes = {
-		store: PropTypes.object.isRequired
+		store: PropTypes.object.isRequired,
+		authenticated: PropTypes.bool.isRequired,
 	};
 
 	static defaultTypes = {
@@ -55,11 +57,23 @@ export default class App extends Component {
 							<Switch>
 								<Route exact path="/" component={HomePage} />
 								<Route exact path="/recipes" component={RecipesPage} />
-								<Route exact path="/recipes/add" component={RecipesAddPage} />
-								<Route exact path="/login" component={LoginPage} />
-								<Route exact path="/logout" component={LogoutPage} />
-								<Route exact path="/register" component={RegisterPage} />
-								<Route exact path="/me" component={CurrentUser} />
+								<Route path="/recipes/:id" component={RecipePage} />
+
+								{this.props.authenticated ? (
+									<>
+										<Route exact path="/logout" component={LogoutPage} />
+										<Route exact path="/me" component={CurrentUser} />
+										<Route exact path="/recipes/add" component={RecipesAddPage} />
+									</>
+								) : null}
+
+								{!this.props.authenticated ? (
+									<>
+										<Route exact path="/login" component={LoginPage} />
+										<Route exact path="/register" component={RegisterPage} />
+									</>
+								) : null}
+
 							</Switch>
 
 							<Notification/>
@@ -70,3 +84,12 @@ export default class App extends Component {
 		);
 	}
 }
+
+const mapStateToProp = (state) => ({
+	authenticated: state.currentUser.authenticated
+});
+
+export default connect(
+	mapStateToProp,
+	null
+)(App);
