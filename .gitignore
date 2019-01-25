@@ -72,3 +72,6 @@ __pycache__/
 
 # VS code
 .vscode
+
+# server
+server/media
