@@ -6,7 +6,7 @@ import {
 	SIGN_IN
 } from 'actionTypes';
 
-const API_URL = '/';
+const API_URL = 'http://localhost:8001/';
 
 const instance = axios.create({
 	headers: {
