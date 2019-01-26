@@ -16,7 +16,7 @@ router.register(r'users', UserViewSet)
 router.register(r'recipes', RecipeViewSet)
 
 recipe_router = nested_routers.NestedSimpleRouter(router, r'recipes', lookup='recipes')
-recipe_router.register(r'comments', CommentViewSet, base_name='recipes-comments')
+recipe_router.register(r'comments', CommentViewSet, base_name='recipe-comments')
 
 urlpatterns = [
     path('accounts/', include(accounts_urls)),

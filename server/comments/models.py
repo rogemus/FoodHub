@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Comment(models.Model):
-    Recipe = models.ForeignKey('recipes.Recipe', related_name='comments', on_delete=models.CASCADE)
+    recipe = models.ForeignKey('recipes.Recipe', related_name='comments', on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     text = models.TextField(null=False, blank=False, max_length=250)
     submit_date = models.DateTimeField(auto_now_add=True, db_index=True)

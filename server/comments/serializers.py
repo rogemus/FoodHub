@@ -18,7 +18,6 @@ class CommentSerializer(NestedHyperlinkedModelSerializer):
             'author',
             'text',
             'submit_date',
-            'api_url',
         )
         read_only_fields = (
             'id',
@@ -29,5 +28,4 @@ class CommentSerializer(NestedHyperlinkedModelSerializer):
             'api_url': {
                 'view_name': 'recipe-comments-detail',
             },
-
         }
