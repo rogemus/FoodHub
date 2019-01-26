@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  client:
+    build: ./client
+    container_name: 'foodhub-react'
+    labels:
+      application: 'foodhub-react'
+    command: serve -s build
+    volumes:
+      - ./client/:/code
+    ports:
+      - "5000:5000"
+    depends_on:
+      - web
+      - db
