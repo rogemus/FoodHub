@@ -1,0 +1,124 @@
+[
+  {
+    "model": "accounts.user",
+    "pk": "11",
+    "fields": {
+      "password": "yuGyj7Qjo4",
+      "last_login": null,
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "username": "food_3",
+      "email": "food_hub_user_3@example.com"
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": "12",
+    "fields": {
+      "password": "kVVdBpfTyg",
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "username": "food_2",
+      "email": "food_hub_user_2@example.com"
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": "13",
+    "fields": {
+      "password": "aqrgEZF336",
+      "last_login": "2018-03-31T06:21:28.587Z",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2018-03-30T10:18:34.654Z",
+      "username": "admin",
+      "email": "admin@example.com"
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": "14",
+    "fields": {
+      "password": "EZZMYHjer7",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2018-03-30T10:19:10.653Z",
+      "username": "food_1",
+      "email": "food_hub_user@example.com"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "15",
+    "fields": {
+      "title": "Naleśniki",
+      "description": "Składniki: 1 szklanka mąki pszennej. 2 jajka. 1 szklanka mleka. 3/4 szklanki wody (najlepiej gazowanej), szczypta soli, 3 łyżki masła lub oleju roślinnego. Przygotowanie: Mąkę wsypać do miski, dodać jajka, mleko, wodę i sól. Zmiksować na gładkie ciasto. Dodać roztopione masło lub olej roślinny i razem zmiksować (lub wykorzystać tłuszcz do smarowania patelni przed smażeniem każdego naleśnika). Naleśniki smażyć na dobrze rozgrzanej patelni z cienkim dnem np. naleśnikowej. Przewrócić na drugą stronę gdy spód naleśnika będzie już ładnie zrumieniony i ścięty",
+      "image": "https://www.kwestiasmaku.com/sites/kwestiasmaku.com/files/nalesniki_cienkie_01.jpg",
+      "author": "11"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "16",
+    "fields": {
+      "title": "JAJECZNICA NA OSTRO",
+      "description": "Składniki: jajka – 2-3 szt, kabanosy – 2 szt. cebula – ¼ szt, pomidorki koktajlowe – 4 szt, czarne oliwki – 3 szt, papryczka chili, masło, sól,pieprz. Przygotowanie: Cebulę siekamy w drobną kostkę. Na patelni rozpuszczamy masło. Kabanosy kroimy na mniejsze kawałki. Pokrojoną cebulę wrzucamy na patelnię. Oliwki drobno siekamy, pomidorki koktajlowe kroimy na ćwiartki i wszystko dodajemy do cebuli. Niewielką ilość papryczki chili (razem z nasionami) drobno siekamy i także wrzucamy na patelnię. Stopień ostrości dopasowujemy do preferencji smakowych. Jajka wbijamy do miseczki, doprawiamy solą i pieprzem, mieszamy. Wlewamy na patelnię i czekamy, aż wszystko się zetnie (tym razem nie mieszamy!). Delikatnie rozgarniamy jajecznicę łopatką. Gotową jajecznicę przekładamy do miseczki.",
+      "image": "https://www.zajadam.pl/wp-content/uploads/2015/11/jajecznica-3-2-891x500.jpg",
+      "author": "12"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "17",
+    "fields": {
+      "title": "KLEFTIKO Z INDYKA",
+      "description": "Składniki\n1 kg udźca z indyka bez kości lub 1,5 kg z kością1 kg ziemniaków1 główka czosnku1 łyżka suszonego oregano1 łyżeczka suszonego majeranku3 listki laurowe2 ziela angielskie3 łyżki oliwy extra vergine1 łyżka soku z cytrynysól i świeżo zmielony pieprz1/4 czerwonej cebuli\n\nPrzygotowanie \nPiekarnik nagrzać do 190 stopni C. Mięso przekroić na 4 mniejsze części (używając mięsa z kością można poprosić sprzedawcę aby je przerąbał w połowie). Ziemniaki obrać i pokroić na ok. 4 cm kawałki, doprawić solą. Czosnek obrać z zewnętrznych osłonek, podzielić na pojedyncze ząbki, przekroić ja na połówki.Mięso doprawić solą i pieprzem i umieścić w dużym naczyniu żaroodpornym, obłożyć ziemniakami, w środek powciskać czosnek, liście laurowe i ziele angielskie. Posypać oregano i majerankiem, skropić cytryną i oliwą. W razie potrzeby doprawić jeszcze solą i świeżo zmielonym pieprzem.Przykryć szczelnie folią aluminiową lub pokrywą i wstawić do piekarnika na 2 godziny. Zdjąć pokrywkę i zapiekać jeszcze w wyższej temp. 230 stopni C przez ok. 15 minut. Na 5 minut przed końcem dodać pokrojone liście jarmużu jeśli ich używamy.W zależności od wielkości naczynia zbierze się więcej lub mniej płynu, jeśli podczas ostatniego etapu zapiekania nie będzie żadnego płynu, można wlać na spód kilka łyżek wody. Posypać cienko pokrojoną czerwoną cebulą.",
+      "image": "https://www.zajadam.pl/wp-content/uploads/2015/11/jajecznica-3-2-891x500.jpg",
+      "author": "12"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "18",
+    "fields": {
+      "title": "CHILI CON CARNE",
+      "description": "SKŁADNIKI\n 4 PORCJE\n1 łyżka oliwy1 cebula2 ząbki czosnku1 łyżeczka chilli w proszku1 łyżeczka zmielonego kminu rzymskiego (kuminu)1 łyżeczka suszonego oregano500 g mielonej wołowiny (np. gulaszowej, antrykotu)2 świeże pomidory lub 2/3 puszki obranych pomidorów1 łyżeczka cukru1 czerwona papryka200 g czerwonej fasoli (ugotowanej)około 100 ml bulionu np. WOŁOWEGO lub wodyopcjonalnie: 100 g boczku, 5 kawałków suszonych pomidorów\n\nPRZYGOTOWANIE\nNa dużej patelni, na oliwie zeszklić pokrojoną w kosteczkę cebulę, dodać starty czosnek, chilli, kmin rzymski i oregano i mieszając smażyć przez 1 minutę. Stopniowo dodawać zmieloną wołowinę i zmielony lub drobno posiekany boczek, mieszając zrumieniać z każdej strony.Dodać pomidory (świeże należy sparzyć, obrać, pokroić na ćwiartki, usunąć pestki, miąższ pokroić w kosteczkę, pomidory z puszki należy rozdrobnić jeśli są w całości). Wymieszać i doprawić cukrem, pieprzem oraz szczyptą soli.Przykryć i dusić przez około 20 na umiarkowanym ogniu, co jakiś czas zamieszać. Dodać pokrojoną w kosteczkę paprykę i posiekane suszone pomidory jeśli ich używamy. Gotować pod przykryciem przez około 10 minut, od czasu do czasu zamieszać. Na koniec dodać fasolę i gotować pod przykryciem przez ok. 3 minuty.Na koniec gotować potrawę podlewając stopniowo wrzącym bulionem lub wodą, tak aby powstało trochę gęstego sosu. Można przygotować wcześniej i odgrzewać.",
+      "image": "https://www.kwestiasmaku.com/sites/kwestiasmaku.com/files/page345_4.jpg",
+      "author": "13"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "19",
+    "fields": {
+      "title": "HAMBURGER",
+      "description": "SKŁADNIKI2 opakowania mięsa mielonego wołowego12 plastrów boczku parzonego, pokrojonych w poprzek w cienkie paseczki3 cebuleOliwa z oliwek6 g kminku, roztartego w moździerzu5 ząbków czosnku, drobno posiekanych1 i 1/2 ostrej papryczki chili, pozbawionej nasion30 g natki pietruszki, posiekanejSólBiały mielony pieprzNiewielka ilość oleju słonecznikowego1 pomidor, pokrojony w grube plastry (około 1 cm)30 g selera naciowego2 jaja, same żółtka1 cytryna1 łyżeczka musztardy Dijon150 g korniszonów, pokrojonych w kosteczkę6 bułek hamburgerowych z tygodnia amerykańskiego\n\nPRZYGOTOWANIE\nNa patelni rozgrzewamy niewielką ilość oliwy z oliwek. Przesmażamy pokrojony boczek, a następnie dodajemy dwie pokrojone w drobną kosteczkę cebule. Smażymy maksymalnie 2 minuty. Zawartość patelni przekładamy do miseczki i odstawiamy w celu ostudzenia.\nPo wystudzeniu dodajemy cebulę i boczek do mięsa mielonego. Mieszamy. Dodajemy roztarty kminek i 3 posiekane ząbki czosnku. Jedną papryczkę chili pozbawiamy nasion, kroimy ją w bardzo drobną kosteczkę i dodajemy do mięsa. Całość posypujemy posiekaną natką pietruszki, doprawiamy solą i białym mielonym pieprzem i wyrabiamy, dodając niewielką ilość oliwy z oliwek.\nDłonie natłuszczamy olejem słonecznikowym i formujemy kulki z mięsa. Następnie z kulek formujemy krążki o grubości około 1-1,5 cm i delikatnie nożem z każdej strony wyrównujemy krawędzie. Przekładamy na talerz i zakrywamy folią spożywczą. Odstawiamy.\nCebulę kroimy w plastry (około 0,5 cm grubości). Plastry pomidora i cebuli polewamy oliwą z oliwek, doprawiamy solą, białym pieprzem i pokrojonym drobno ząbkiem czosnku.\nPatelnię grillową natłuszczamy za pomocą ręcznika papierowego zamoczonego w oleju słonecznikowym. Grillujemy plastry pomidora i cebuli z obu stron, następnie przekładamy na blachę wyłożoną papierem do pieczenia.\nPrzekrojone bułki wykładamy na blaszkę wyłożoną pergaminem. Polewamy je oliwą z oliwek i wkładamy do nagrzanego piekarnika na mniej więcej 2 minuty.\nMięso smażymy na natłuszczonej patelni grillowej 2 minuty z każdej strony. Bułki wyciągamy z piekarnika. Na spody bułek nakładamy sos, na sos nakładamy mięso, na mięso ponownie nakładamy sos, grillowanego pomidora i kilka krążków grillowanej cebuli i przykrywamy wierzchem bułki. Talerz dekorujemy sosem.\nSOS\nLiście selera naciowego siekamy, przekładamy do moździerza, dodajemy niewielką ilość soli, niewielką ilość oliwy z oliwek i jeden rozgnieciony ząbek czosnku. Ucieramy, następnie przekładamy do miseczki, dodajemy 2 żółtka, sok z 1/2 cytryny i płaską łyżeczkę musztardy dijon, całość mieszamy. Podczas mieszania dodajemy niewielką ilość oliwy z oliwek i znów intensywnie mieszamy. Dodajemy pokrojone korniszony, mieszamy. Połowę papryczki chili pozbawiamy gniazd nasiennych, kroimy w kosteczkę i dodajemy do sosu. Wszystko bardzo delikatnie mieszamy. Odstawiamy.",
+      "image": "https://www.recipetineats.com/wp-content/uploads/2016/02/Beef-Hamburgers_7-2-650x910.jpg",
+      "author": "12"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "110",
+    "fields": {
+      "title": "MUFFINKI DYNIOWO-POMARAŃCZOWE Z MUSEM ŚLIWKOWYM",
+      "description": "SKŁADNIKI\n 12 SZTUK\n300 g PIECZONEJ DYNI1 pomarańcza100 ml mleka100 g masła2 jajka250 g mąki2 łyżeczki proszku do pieczeniaszczypta soli150 g cukru1 bydyń śmietankowy (proszek)1/2 słoiczka powideł śliwkowych\nPRZYGOTOWANIE\nUpiec dynię jak w TYM PRZEPISIE. Piekarnik nagrzać do 180 stopni C. Formę na muffiny wyłożyć 12 papilotkami. Zetrzeć skórkę z pomarańczy i wycisnąć sok (odmierzyć 50 ml soku).Upieczoną dynię zmiksować blenderem z mlekiem i sokiem z pomarańczy na gładki mus.Roztopić masło w misce, ostudzić i roztrzepać rózgą z jajkami oraz skórką z pomarańczy. Dodać mus dyniowy i wymieszać rózgą.Do drugiej miski przesiać mąkę, dodać proszek do pieczenia, sól, cukier, i proszek budyniowy, wymieszać.Do suchych składników dodać mokre i wymieszać (delikatnie i powoli łyżką, tylko do pierwszego połączenia się składników w jednolite ciasto bez widocznej białej mąki).Nałożyć równe porcje ciasta do papilotek, na środku położyć pełną łyżeczkę powideł, częściowo zagłębiając łyżeczkę w masę. Cienkim patyczkiem zrobić \"ósemkę\" rozprowadzając mus w fantazyjny wzorek. Wstawić do nagrzanego piekarnika i piec przez 25 - 30 minut do suchego patyczka.",
+      "image": "https://www.kwestiasmaku.com/sites/kwestiasmaku.com/files/muffiny_dyniowo_sliwkowe_0.jpg",
+      "author": "11"
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": "111",
+    "fields": {
+      "title": "MUFFINKI DYNIOWO-POMARAŃCZOWE Z MUSEM ŚLIWKOWYM",
+      "description": "Składniki:\n300 mlpassaty pomidorowej300 gmielonej wołowiny300 gmakaronu spaghetti30 gtartego parmezanu1łyżka koncentratu pomidorowego1ząbek czosnku1mała cebula0.5łyżeczki suszonego tymianku0.5łyżeczki suszonego oreganooliwa z oliweksól, pieprzświeża bazylia\nJak przygotować?Na głębokiej patelni rozgrzej około 2 łyżki oliwy z oliwek.\nNa rozgrzaną patelnię wrzuć czosnek i cebulę, a po chwili dodaj mięso, rozdrabniaj je np. widelcem, tak aby nie powstały grube mięsne grudki.\nDo mięsa dodaj zioła oraz koncentrat. Całość podgrzewaj przez chwilę, dodaj passatę (przecier pomidorowy), gotuj na małym ogniu około 30 minut.\nMakaron ugotuj al dente, podawaj go z sosem, serem, i bazylią.",
+      "image": "https://www.kwestiasmaku.com/sites/kwestiasmaku.com/files/spaghetti_bolognese_01.jpg",
+      "author": "12"
+    }
+  }
+]
