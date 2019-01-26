@@ -20,7 +20,7 @@ export function getRecipeDetails(id) {
 	return get(config.path, {}, config.type);
 }
 
-export function postRecipes(data) {
+export function postRecipes(data, onSuccess, onFail) {
 	const config = {
 		path: 'api/recipes/',
 		type: POST_RECIPE,
@@ -33,5 +33,5 @@ export function postRecipes(data) {
 		}
 	};
 
-	return post(config.path, config.conf, config.type);
+	return post(config.path, config.conf, config.type, onSuccess, onFail);
 }

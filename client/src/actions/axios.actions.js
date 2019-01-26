@@ -10,7 +10,8 @@ const API_URL = 'http://localhost:8001/';
 
 const instance = axios.create({
 	headers: {
-		accept: 'application/json'
+		accept: 'application/json',
+		'Allow-Control-Allow-Origin': '*'
 	}
 });
 

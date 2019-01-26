@@ -42,7 +42,7 @@ export class RecipeAddPage extends Component {
 		data.append('description', this.state.description);
 		data.append('image', this.state.image);
 
-		this.props.postRecipes(data);
+		this.props.postRecipes(data, this.handleAddSuccess, this.handleAddFail);
 	}
 
 	handleAddSuccess = () => {

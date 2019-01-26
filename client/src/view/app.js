@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -19,7 +19,7 @@ import RecipesAddPage from './pages/recipes/recipesAddPage';
 import LogoutPage from './pages/logout/logoutPage';
 import CurrentUser from './pages/currentUser/currentUserPage';
 import RecipePage from './pages/recipes/recipePage';
-import Error404Page from './pages/errors/404Page';
+// import Error404Page from './pages/errors/404Page';
 
 export class App extends Component {
 	static propTypes = {
@@ -60,24 +60,11 @@ export class App extends Component {
 								<Route exact path="/recipes" component={RecipesPage} />
 								<Route exact path="/recipes/:id" component={RecipePage} />
 								<Route exact path="/logout" component={LogoutPage} />
-								<Route path='/404' component={Error404Page} />
-								<Redirect from='*' to='/404' />
 								
-								{this.props.authenticated ? (
 									<Route exact path="/me" component={CurrentUser} />
-								) : null}
-
-								{this.props.authenticated ? (
 									<Route exact path="/recipes-add" component={RecipesAddPage} />
-								) : null}
-
-								{!this.props.authenticated ? (
 									<Route exact path="/register" component={RegisterPage} />
-								) : null}
-
-								{!this.props.authenticated ? (
 									<Route exact path="/login" component={LoginPage} />
-								) : null}
 
 							</Switch>
 
