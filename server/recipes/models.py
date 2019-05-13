@@ -8,5 +8,8 @@ class Recipe(models.Model):
     description = models.TextField(null=False, blank=False)
     image = models.ImageField(null=True)
 
+    def get_last_comments(self, qt=3):
+        return self.comments.filter(is_removed=False, is_public=True).order_by('-submit_date')[:qt]
+
     def __str__(self):
         return self.title

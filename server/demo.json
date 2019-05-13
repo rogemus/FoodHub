@@ -120,5 +120,18 @@
       "image": "https://www.kwestiasmaku.com/sites/kwestiasmaku.com/files/spaghetti_bolognese_01.jpg",
       "author": "12"
     }
-  }
+  },
+  {
+    "model": "comments.comment",
+    "pk": 1116,
+    "fields": {
+        "recipe": "8",
+        "author": "1",
+        "text": "Om nom nom nom ale dobre",
+        "submit_date": "2018-03-30T10:28:37.702Z",
+        "updated_at": "2017-09-07T18:00:00Z",
+        "is_public": true,
+        "is_removed": false
+    }
+}
 ]
